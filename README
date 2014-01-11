@@ -1,0 +1,53 @@
+-----------------------------EE450 socket project-----------------------------
+------------------------------------------------------------------------------
+*Special note*
+------------------------------------------------------------------------------
+
+Student name: Hefang Li
+Student ID: 5227859251
+
+Generally, I write 6 code files all using C, a Makefile and a README. My implementation strictly follows all the tasks defined in this assignment. They can meet all the requirements and function normally on nunki server.
+
+------------------------------------------------------------------------------
+code files explanation
+------------------------------------------------------------------------------
+
+directory_server.c establishes UDP connection and waits for 3 file_servers to send TCP port numbers. It creates directory.txt and updates it each time receiving register information from a file_server. After creating a complete directory.txt, it establishes UDP connection and waits for 2 clients to send requests. It search for the nearest available file_server and send its TCP port number back to the clients.
+
+file_server#.c sends TCP port number to directory_server using UDP connection. Then it establishes TCP connection and waiting for clients to send requests. It will respond each request by sending back the requird doc.
+
+client#.c first sends doc request to directory_server and gets reply containing TCP port number of nearest available file_server. Then, it sends doc request to that file_server and will get the doc it needs.
+
+------------------------------------------------------------------------------
+Compile the project
+------------------------------------------------------------------------------
+
+1. make clean
+
+2. make
+
+------------------------------------------------------------------------------
+Run tests
+------------------------------------------------------------------------------
+
+1. ./directory_server
+
+2. ./file_server1
+   ./file_server2
+   ./file_server3
+
+    These can be in random order but you need to run all of them in 3 times.
+
+3. ./client1
+   ./client2
+
+    They can be in random order and can be repeated as you like.
+
+4. press ctrl-C to terminate all 3 file_servers. 
+
+------------------------------------------------------------------------------
+Reused Code
+------------------------------------------------------------------------------
+
+I used some functions from the given tutorial http://beej.us/guide/bgnet/. I used them to establish TCP and UDP connections. All other codes are written by me. 
+
