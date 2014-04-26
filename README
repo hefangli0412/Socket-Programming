@@ -1,10 +1,6 @@
------------------------------EE450 socket project-----------------------------
 ------------------------------------------------------------------------------
 *Special note*
 ------------------------------------------------------------------------------
-
-Student name: Hefang Li
-Student ID: 5227859251
 
 Generally, I write 6 code files all using C, a Makefile and a README. My implementation strictly follows all the tasks defined in this assignment. They can meet all the requirements and function normally on nunki server.
 
